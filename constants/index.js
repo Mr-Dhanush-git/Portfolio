@@ -13,8 +13,28 @@ const navLinks = [
 ];
 
 const resumeLink = {
-  name: "@ Resume",
+  name: "Resume",
   href: "/resume.pdf",
 };
 
-export { roles, navLinks, resumeLink };
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/dhanushchinthalapudi/",
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/Mr-Dhanush-git", 
+  },
+  {
+    name: "LeetCode",
+    href: "https://leetcode.com/u/Mrdhanush/",
+  },
+  {
+    name: "Email",
+    href: "mailto:dhanushchinthalapudi@gmail.com",
+  },
+];
+
+
+export { roles, navLinks, resumeLink , socialLinks};
