@@ -4,6 +4,11 @@ import gsap from 'gsap';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { GoArrowUpRight } from "react-icons/go";
+import { GoHome } from "react-icons/go";
+import { RiComputerLine } from "react-icons/ri";
+import { CgProfile } from "react-icons/cg";
+
+
 
 const NavBar = () => {
 
@@ -64,6 +69,7 @@ useGSAP(() => {
 }, {
   dependencies: [activeLink],
 });
+
   useEffect(() => {
     let delay;
 
@@ -127,12 +133,13 @@ useGSAP(() => {
             <span className='p-1 text-gray-600'>
               •</span> 
 
-            <span className='text-gray-600 font-light font-montserrat text-[21px] italic'>
+            <span className='text-gray-600 font-light font-montserrat text-[18px] italic'>
               {roles[roleIndex]}
               </span>
           </p>
         </a>
       </div>
+
 
 <div className="absolute left-1/2 -translate-x-1/2">
   <ul
@@ -141,7 +148,8 @@ useGSAP(() => {
       overflow-hidden
       rounded-full
       border border-black/50
-      bg-gradient-to-b from-white/90 via-[#e5e5e5] to-[#d6d6d6]
+
+      bg-gradient-to-b from-white/90 via-[#e2e2e2] to-[#c7c4c4]
       px-1 py-1
       font-montserrat
       shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.08)]
@@ -156,7 +164,7 @@ useGSAP(() => {
         z-20
         rounded-full
         bg-gradient-to-b
-        from-white/40
+        from-white/50
         via-transparent
         to-transparent
       "
@@ -189,7 +197,9 @@ useGSAP(() => {
           href={link.href}
           onClick={() => setActiveLink(link.href)}
           className={`
-            block
+            flex
+            items-center
+            gap-2
             rounded-full
             px-6
             py-1.5
@@ -197,14 +207,42 @@ useGSAP(() => {
             text-[19px]
             transition-colors
             duration-300
+            font-
+
             ${
               activeLink === link.href
                 ? "text-white"
-                : "text-[#575656] hover:text-black"
+                : "text-[#3f3f3f] hover:text-black"
             }
           `}
         >
-          {link.name}
+
+          {/* Home */}
+          {link.href === "#home" && (
+            <GoHome className="shrink-0 text-[18px]" />
+          )}
+
+          {/* Projects */}
+          {link.href === "#projects" && (
+            <RiComputerLine className="shrink-0 text-[18px]" />
+          )}
+
+          {/* About */}
+          {link.href === "#about" && (
+            <CgProfile className="shrink-0 text-[18px]" />
+          )}
+
+          {/* Contact */}
+          <span className={`
+            ${
+              link.href === "#contact"
+                ? "inline"
+                : "hidden md:inline"
+            }
+          `}>
+            {link.name}
+          </span>
+
         </a>
       </li>
     ))}

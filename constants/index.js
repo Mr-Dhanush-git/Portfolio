@@ -2,7 +2,7 @@ const roles = [
   "designer",
   "developer",
   "tech enthusiast",
-  "future pirate king 🏴‍☠️",
+  "Future Pirate King 👒",
 ];
 
 const navLinks = [
